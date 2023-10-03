@@ -1,5 +1,5 @@
 <h1 align="center">
-  React Contacts App
+  React Contacts App by Sara Cruz
 </h1>
 
 <p align="center">
