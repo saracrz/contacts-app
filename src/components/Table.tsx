@@ -42,7 +42,7 @@ export const Table = ({ headers, rows }: TableInterface) => {
 					{rows.map((row) => (
 						<TableRow key={row.name}>
 							{headers.map((header) => (
-								<TableCellBody key={header.label}>
+								<TableCellBody key={header.key}>
 									{header.key === "name" ? (
 										<AvatarAndNameWrapper>
 											<Avatar contactAvatar={row.contactAvatar} />
