@@ -1,4 +1,5 @@
 import {
+	AvatarAndNameWrapper,
 	Content,
 	HeaderWrapper,
 	TableBody,
@@ -8,6 +9,7 @@ import {
 	TableRowHeader,
 	TableWrapper,
 } from "../styles";
+import { Avatar } from "./Avatar";
 
 interface Header {
 	label: string;
@@ -16,7 +18,8 @@ interface Header {
 
 interface Row {
 	name: string;
-	[key: string]: string;
+	icon: React.ReactElement[];
+	[key: string]: string | undefined | React.ReactElement[];
 }
 
 interface TableInterface {
@@ -39,7 +42,16 @@ export const Table = ({ headers, rows }: TableInterface) => {
 					{rows.map((row) => (
 						<TableRow key={row.name}>
 							{headers.map((header) => (
-								<TableCellBody key={header.label}>{row[header.key]}</TableCellBody>
+								<TableCellBody key={header.label}>
+									{header.key === "name" ? (
+										<AvatarAndNameWrapper>
+											<Avatar contactAvatar={row.contactAvatar} />
+											{row[header.key]}
+										</AvatarAndNameWrapper>
+									) : (
+										row[header.key]
+									)}
+								</TableCellBody>
 							))}
 						</TableRow>
 					))}
