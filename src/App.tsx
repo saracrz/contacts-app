@@ -1,32 +1,5 @@
 import { Table } from "./components";
-
-const headers = [
-	{
-		key: "name",
-		label: "Name",
-	},
-	{
-		key: "email",
-		label: "Email",
-	},
-	{
-		key: "phoneNumber",
-		label: "Phone Number",
-	},
-];
-
-const rows = [
-	{
-		name: "Peter",
-		email: "peter@gmail.com",
-		phoneNumber: "00123123123",
-	},
-	{
-		name: "Steven",
-		email: "steven@gmail.com",
-		phoneNumber: "00123123123",
-	},
-];
+import { headers, rows } from "./consts/index";
 
 export const App = () => {
 	return (
