@@ -26,7 +26,9 @@ export const TableRowHeader = styled.tr`
 	display: table-cell;
 `;
 
-export const TableRow = styled.tr``;
+export const TableRow = styled.tr`
+	height: 68px;
+`;
 
 export const TableCellHeader = styled.th`
 	font-size: 14px;
