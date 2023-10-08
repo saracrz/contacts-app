@@ -9,25 +9,10 @@ import {
 	TableRowHeader,
 	TableWrapper,
 } from "../styles";
+import { ITable } from "../types";
 import { Avatar } from "./Avatar";
 
-interface Header {
-	label: string;
-	key: string;
-}
-
-interface Row {
-	name: string;
-	icon: React.ReactElement[];
-	[key: string]: string | undefined | React.ReactElement[];
-}
-
-interface TableInterface {
-	headers: Header[];
-	rows: Row[];
-}
-
-export const Table = ({ headers, rows }: TableInterface) => {
+export const Table = ({ headers, rows }: ITable) => {
 	return (
 		<Content>
 			<TableWrapper>
@@ -40,12 +25,12 @@ export const Table = ({ headers, rows }: TableInterface) => {
 				</HeaderWrapper>
 				<TableBody>
 					{rows.map((row) => (
-						<TableRow key={row.name}>
+						<TableRow key={row.id}>
 							{headers.map((header) => (
 								<TableCellBody key={header.key}>
-									{header.key === "name" ? (
+									{header.key === "first_name" ? (
 										<AvatarAndNameWrapper>
-											<Avatar contactAvatar={row.contactAvatar} />
+											<Avatar avatar={row.avatar} />
 											{row[header.key]}
 										</AvatarAndNameWrapper>
 									) : (

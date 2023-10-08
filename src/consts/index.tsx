@@ -1,8 +1,9 @@
 import { DeleteIcon, EditIcon } from "../assets/icons";
+import { IHeader } from "../types";
 
-export const headers = [
+export const headers: IHeader[] = [
 	{
-		key: "name",
+		key: "first_name",
 		label: "Name",
 	},
 	{
@@ -10,7 +11,7 @@ export const headers = [
 		label: "Email",
 	},
 	{
-		key: "phoneNumber",
+		key: "phone_number",
 		label: "Phone Number",
 	},
 	{
