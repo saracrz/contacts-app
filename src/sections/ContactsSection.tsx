@@ -9,8 +9,10 @@ export const ContactsSection = () => {
 	const { contacts, getContacts } = useContext(ContactContext) as ContactContextType;
 
 	useEffect(() => {
-		void getContacts();
-	}, []);
+		if (!contacts.length) {
+			void getContacts();
+		}
+	}, [getContacts, contacts.length]);
 
 	return contacts.length > 0 ? <Table headers={headers} rows={contacts} /> : null;
 };
