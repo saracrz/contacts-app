@@ -1,18 +1,15 @@
-import { useContext, useEffect } from "react";
+import { useEffect } from "react";
 
 import { Table } from "../components/Table";
 import { headers } from "../consts/index";
-import { ContactContext } from "../context/ContactContext";
-import { ContactContextType } from "../types";
+import { useContacts } from "../context/ContactContext";
 
 export const ContactsSection = () => {
-	const { contacts, getContacts } = useContext(ContactContext) as ContactContextType;
+	const { contacts, getContacts } = useContacts();
 
 	useEffect(() => {
-		if (!contacts.length) {
-			void getContacts();
-		}
-	}, [getContacts, contacts.length]);
+		void getContacts();
+	}, []);
 
-	return contacts.length > 0 ? <Table headers={headers} rows={contacts} /> : null;
+	return contacts.length - 1 ? <Table headers={headers} rows={contacts} /> : null;
 };

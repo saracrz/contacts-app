@@ -1,44 +1,38 @@
 import { DeleteIcon, EditIcon } from "../assets/icons";
-import { IHeader } from "../types";
+import { IContact, IHeader } from "../types";
 
 export const headers: IHeader[] = [
 	{
-		key: "first_name",
+		headerKey: "first_name",
 		label: "Name",
+		isSortable: true,
 	},
 	{
-		key: "email",
+		headerKey: "email",
 		label: "Email",
+		isSortable: true,
 	},
 	{
-		key: "phone_number",
+		headerKey: "phone_number",
 		label: "Phone Number",
 	},
 	{
-		key: "icon",
+		headerKey: "icons",
 		label: "",
 	},
 ];
 
-export const rows = [
+export const iconsRows = [
+	<DeleteIcon key="delete-icon" onClick={() => alert("clicked")} />,
+	<EditIcon key="edit-icon" onClick={() => alert("clicked")} />,
+];
+
+export const defaultStateValue: IContact[] = [
 	{
-		name: "Peter",
-		contactAvatar: "https://picsum.photos/100/100",
-		email: "peter@gmail.com",
-		phoneNumber: "00123123123",
-		icon: [
-			<DeleteIcon onClick={() => alert("clicked")} />,
-			<EditIcon onClick={() => alert("clicked")} />,
-		],
-	},
-	{
-		name: "Steven",
-		contactAvatar: "https://picsum.photos/100/100",
-		email: "steven@gmail.com",
-		phoneNumber: "00123123123",
-		icon: [
-			<DeleteIcon onClick={() => alert("clicked")} />,
-			<EditIcon onClick={() => alert("clicked")} />,
-		],
+		id: NaN,
+		avatar: "",
+		email: "",
+		first_name: "",
+		phone: NaN,
 	},
 ];
