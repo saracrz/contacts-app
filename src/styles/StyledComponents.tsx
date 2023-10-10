@@ -21,6 +21,16 @@ export const TableWrapper = styled.table`
 
 export const HeaderWrapper = styled.thead``;
 
+export const TableHeaderWithIcon = styled.div`
+	align-items: center;
+	cursor: pointer;
+	display: flex;
+
+	svg {
+		margin-left: 1rem;
+	}
+`;
+
 export const TableRowHeader = styled.tr`
 	background-color: #d7d7d740;
 	display: table-cell;
@@ -31,8 +41,8 @@ export const TableRow = styled.tr`
 `;
 
 export const TableCellHeader = styled.th`
-	font-size: 14px;
 	color: #626f81;
+	font-size: 14px;
 	font-weight: 400;
 	padding: 14px;
 	text-align: left;
@@ -48,8 +58,8 @@ export const TableCellBody = styled.td`
 `;
 
 export const AvatarAndNameWrapper = styled.div`
-	display: flex;
 	align-items: center;
+	display: flex;
 
 	img {
 		margin-right: 1rem;
@@ -57,9 +67,9 @@ export const AvatarAndNameWrapper = styled.div`
 `;
 
 export const AvatarImg = styled.img`
-	width: 32px;
-	height: auto;
 	border-radius: 50%;
+	height: auto;
+	width: 32px;
 `;
 
 export const Icon = styled.svg`
