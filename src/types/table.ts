@@ -1,8 +1,9 @@
 import { IContact } from "./context";
 
 export interface IHeader {
+	isSortable?: boolean;
+	headerKey: string;
 	label: string;
-	key: string;
 }
 
 export interface ITable {
