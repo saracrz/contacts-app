@@ -11,5 +11,5 @@ export const ContactsSection = () => {
 		void getContacts();
 	}, []);
 
-	return <Table headers={headers} rows={contacts} />;
+	return contacts.length - 1 ? <Table headers={headers} rows={contacts} /> : null;
 };

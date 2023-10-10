@@ -16,9 +16,7 @@ export const TableHeader = ({ isSortable, label, headerKey }: IHeader) => {
 					</TableHeaderWithIcon>
 				</TableCellHeader>
 			) : (
-				<TableCellHeader>
-					<>{label}</>
-				</TableCellHeader>
+				<TableCellHeader>{label}</TableCellHeader>
 			)}
 		</TableRowHeader>
 	);
