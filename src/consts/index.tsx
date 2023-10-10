@@ -23,8 +23,8 @@ export const headers: IHeader[] = [
 ];
 
 export const iconsRows = [
-	<DeleteIcon onClick={() => alert("clicked")} />,
-	<EditIcon onClick={() => alert("clicked")} />,
+	<DeleteIcon key="delete-icon" onClick={() => alert("clicked")} />,
+	<EditIcon key="edit-icon" onClick={() => alert("clicked")} />,
 ];
 
 export const defaultStateValue: IContact[] = [
