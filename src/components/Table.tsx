@@ -1,3 +1,4 @@
+import { iconsRows } from "../consts/index";
 import {
 	AvatarAndNameWrapper,
 	Content,
@@ -38,6 +39,7 @@ export const Table = ({ headers, rows }: ITable) => {
 									) : (
 										row[header.headerKey]
 									)}
+									{header.headerKey === "icons" ? <>{iconsRows}</> : null}
 								</TableCellBody>
 							))}
 						</TableRow>

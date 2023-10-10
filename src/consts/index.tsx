@@ -17,32 +17,14 @@ export const headers: IHeader[] = [
 		label: "Phone Number",
 	},
 	{
-		headerKey: "icon",
+		headerKey: "icons",
 		label: "",
 	},
 ];
 
-export const rows = [
-	{
-		name: "Peter",
-		contactAvatar: "https://picsum.photos/100/100",
-		email: "peter@gmail.com",
-		phoneNumber: "00123123123",
-		icon: [
-			<DeleteIcon onClick={() => alert("clicked")} />,
-			<EditIcon onClick={() => alert("clicked")} />,
-		],
-	},
-	{
-		name: "Steven",
-		contactAvatar: "https://picsum.photos/100/100",
-		email: "steven@gmail.com",
-		phoneNumber: "00123123123",
-		icon: [
-			<DeleteIcon onClick={() => alert("clicked")} />,
-			<EditIcon onClick={() => alert("clicked")} />,
-		],
-	},
+export const iconsRows = [
+	<DeleteIcon onClick={() => alert("clicked")} />,
+	<EditIcon onClick={() => alert("clicked")} />,
 ];
 
 export const defaultStateValue: IContact[] = [
