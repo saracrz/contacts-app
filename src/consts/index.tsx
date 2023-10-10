@@ -1,21 +1,23 @@
 import { DeleteIcon, EditIcon } from "../assets/icons";
-import { IHeader } from "../types";
+import { IContact, IHeader } from "../types";
 
 export const headers: IHeader[] = [
 	{
-		key: "first_name",
+		headerKey: "first_name",
 		label: "Name",
+		isSortable: true,
 	},
 	{
-		key: "email",
+		headerKey: "email",
 		label: "Email",
+		isSortable: true,
 	},
 	{
-		key: "phone_number",
+		headerKey: "phone_number",
 		label: "Phone Number",
 	},
 	{
-		key: "icon",
+		headerKey: "icon",
 		label: "",
 	},
 ];
@@ -40,5 +42,15 @@ export const rows = [
 			<DeleteIcon onClick={() => alert("clicked")} />,
 			<EditIcon onClick={() => alert("clicked")} />,
 		],
+	},
+];
+
+export const defaultStateValue: IContact[] = [
+	{
+		id: NaN,
+		avatar: "",
+		email: "",
+		first_name: "",
+		phone: NaN,
 	},
 ];
