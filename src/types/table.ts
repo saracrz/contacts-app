@@ -1,4 +1,4 @@
-import { IContact } from "./context";
+import { IContact } from "./contact";
 
 export interface IHeader {
 	isSortable?: boolean;
