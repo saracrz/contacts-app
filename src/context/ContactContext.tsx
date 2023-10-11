@@ -1,19 +1,27 @@
 import { createContext, useContext, useState } from "react";
 
 import { defaultStateValue } from "../consts/index";
-import { ContactContextType, IContact, TSortOrder } from "../types";
+import { ContactContextType, IContact, TContactData, TContactsData, TSortOrder } from "../types";
 
 export const ContactContext = createContext<ContactContextType | null>(null);
 
 export const ContactProvider = ({ children }: { children: React.ReactNode }) => {
 	const [contacts, setContacts] = useState<IContact[]>(defaultStateValue);
+	const [selectedContact, setSelectedContact] = useState<IContact | null>(null);
 	const [sortOrder, setSortOrder] = useState<TSortOrder>("asc");
 
 	const getContacts = async (): Promise<void> => {
-		const res: Response = await fetch("https://random-data-api.com/api/v2/users?size=15");
-		const data = (await res.json()) as IContact[];
+		const res: Response = await fetch("https://reqres.in/api/users");
+		const data = (await res.json()) as TContactsData;
 
-		setContacts(data);
+		setContacts(data.data);
+	};
+
+	const getContact = async (id: number): Promise<void> => {
+		const res: Response = await fetch(`https://reqres.in/api/users/${id}`);
+		const data = (await res.json()) as TContactData;
+
+		setSelectedContact(data.data);
 	};
 
 	const sortByName = () => {
@@ -33,7 +41,16 @@ export const ContactProvider = ({ children }: { children: React.ReactNode }) => 
 
 	return (
 		<ContactContext.Provider
-			value={{ contacts, getContacts, setContacts, setSortOrder, sortOrder, sortByName }}
+			value={{
+				contacts,
+				getContact,
+				getContacts,
+				selectedContact,
+				setContacts,
+				setSortOrder,
+				sortOrder,
+				sortByName,
+			}}
 		>
 			{children}
 		</ContactContext.Provider>
