@@ -1,4 +1,5 @@
-import { iconsRows } from "../consts/index";
+import { DeleteIcon, EditIcon, Info } from "../assets/icons";
+import { useContacts } from "../context/ContactContext";
 import {
 	AvatarAndNameWrapper,
 	Content,
@@ -13,6 +14,12 @@ import { Avatar } from "./Avatar";
 import { TableHeader } from "./TableHeader";
 
 export const Table = ({ headers, rows }: ITable) => {
+	const { getContact, selectedContact } = useContacts();
+
+	const handleRowClick = (userId: string | number) => {
+		void getContact(userId, selectedContact);
+	};
+
 	return (
 		<Content>
 			<TableWrapper>
@@ -28,7 +35,7 @@ export const Table = ({ headers, rows }: ITable) => {
 				</HeaderWrapper>
 				<TableBody>
 					{rows.map((row) => (
-						<TableRow key={row.id}>
+						<TableRow key={row.id} onClick={() => handleRowClick(row.id)}>
 							{headers.map((header) => (
 								<TableCellBody key={header.headerKey}>
 									{header.headerKey === "first_name" ? (
@@ -39,7 +46,13 @@ export const Table = ({ headers, rows }: ITable) => {
 									) : (
 										row[header.headerKey]
 									)}
-									{header.headerKey === "icons" ? <>{iconsRows}</> : null}
+									{header.headerKey === "icons" ? (
+										<>
+											<DeleteIcon key="delete-icon" onClick={() => alert("clicked")} />
+											<EditIcon key="edit-icon" onClick={() => alert("clicked")} />
+											<Info key="more-icon" onClick={() => handleRowClick(row.id)} />
+										</>
+									) : null}
 								</TableCellBody>
 							))}
 						</TableRow>
