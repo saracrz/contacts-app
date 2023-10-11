@@ -7,6 +7,7 @@ export const AppRoot = createGlobalStyle`
 		
 		body {
 			background-color: #f3f3f3;
+			padding: 40px;
 		}
     
 `;
