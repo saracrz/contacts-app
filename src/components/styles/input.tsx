@@ -27,7 +27,7 @@ export const StyledInput = styled.input`
 		outline: none;
 	}
 
-	@media (max-width: 768px) {
+	@media (max-width: 867px) {
 		margin-bottom: 10px;
 	}
 `;
