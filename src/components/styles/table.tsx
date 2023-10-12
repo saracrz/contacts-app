@@ -36,6 +36,8 @@ export const TableHeaderWithIcon = styled.div`
 	display: flex;
 
 	svg {
+		width: 20px;
+		height: 20px;
 		margin-left: 1rem;
 	}
 `;
@@ -44,13 +46,13 @@ export const TableRowHeader = styled.tr`
 	display: table-cell;
 `;
 
-export const TableRow = styled.tr`
-	height: 68px;
+export const TableRow = styled.tr<{ selected: boolean }>`
+	background-color: ${(props) => props.selected && "#f6f9ff"};
 `;
 
 export const TableCellHeader = styled.th`
 	color: #4e5661;
-	font-size: 14px;
+	font-size: 16px;
 	font-weight: 600;
 	padding: 14px;
 	text-align: left;

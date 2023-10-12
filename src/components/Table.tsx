@@ -35,7 +35,7 @@ export const Table = ({ headers, rows }: ITable) => {
 				</HeaderWrapper>
 				<TableBody>
 					{rows.map((row) => (
-						<TableRow key={row.id}>
+						<TableRow key={row.id} selected={row.id === selectedContact?.id}>
 							{headers.map((header) => (
 								<TableCellBody key={header.headerKey}>
 									{header.headerKey === "first_name" ? (

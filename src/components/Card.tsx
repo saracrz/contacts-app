@@ -8,7 +8,7 @@ export const Card = ({ children, title }: { children: React.ReactNode; title: st
 	return (
 		<CardContent>
 			<CardHeader>
-				<h5>{title}</h5>
+				<h4>{title}</h4>
 				<Close onClick={deselectContact} />
 			</CardHeader>
 			{children}
