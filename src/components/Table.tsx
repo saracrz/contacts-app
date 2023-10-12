@@ -16,7 +16,7 @@ import { TableHeader } from "./TableHeader";
 export const Table = ({ headers, rows }: ITable) => {
 	const { getContact, selectedContact } = useContacts();
 
-	const handleRowClick = (userId: string | number) => {
+	const handleRowClick = (userId: number) => {
 		void getContact(userId, selectedContact);
 	};
 
@@ -35,7 +35,7 @@ export const Table = ({ headers, rows }: ITable) => {
 				</HeaderWrapper>
 				<TableBody>
 					{rows.map((row) => (
-						<TableRow key={row.id} onClick={() => handleRowClick(row.id)}>
+						<TableRow key={row.id}>
 							{headers.map((header) => (
 								<TableCellBody key={header.headerKey}>
 									{header.headerKey === "first_name" ? (
@@ -48,8 +48,8 @@ export const Table = ({ headers, rows }: ITable) => {
 									)}
 									{header.headerKey === "icons" ? (
 										<>
-											<DeleteIcon key="delete-icon" onClick={() => alert("clicked")} />
-											<EditIcon key="edit-icon" onClick={() => alert("clicked")} />
+											<DeleteIcon key="delete-icon" />
+											<EditIcon key="edit-icon" />
 											<Info key="more-icon" onClick={() => handleRowClick(row.id)} />
 										</>
 									) : null}
