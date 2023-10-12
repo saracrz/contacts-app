@@ -12,5 +12,5 @@ export const ContactSectionWrapper = styled.section`
 `;
 
 export const SectionTitle = styled.h2`
-	margin: 55px 0 0px 45px;
+	margin: 0 0 0 40px;
 `;
