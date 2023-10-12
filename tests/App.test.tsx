@@ -21,5 +21,5 @@ test("App component display table and its data correctly", () => {
 
 	expect(screen.getByText("Name")).toBeInTheDocument();
 	expect(screen.getByText("Email")).toBeInTheDocument();
-	expect(screen.getByText("Phone Number")).toBeInTheDocument();
+	expect(screen.getByText("Last Name")).toBeInTheDocument();
 });
