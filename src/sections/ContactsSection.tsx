@@ -15,10 +15,12 @@ export const ContactsSection = () => {
 	}, [contacts.length, getContacts]);
 
 	return (
-		<ContactSectionWrapper>
+		<>
 			<SectionTitle>Contacts</SectionTitle>
-			<Table headers={headers} rows={contacts} />
-			<Contact />
-		</ContactSectionWrapper>
+			<ContactSectionWrapper>
+				<Table headers={headers} rows={contacts} />
+				<Contact />
+			</ContactSectionWrapper>
+		</>
 	);
 };
