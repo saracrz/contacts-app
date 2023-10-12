@@ -24,6 +24,10 @@ export const ContactProvider = ({ children }: { children: React.ReactNode }) => 
 		setSelectedContact(data.data);
 	};
 
+	const deselectContact = () => {
+		setSelectedContact(null);
+	};
+
 	const sortByName = () => {
 		const sort = [...contacts].sort((a: IContact, b: IContact) => {
 			if (sortOrder === "asc") {
@@ -43,10 +47,12 @@ export const ContactProvider = ({ children }: { children: React.ReactNode }) => 
 		<ContactContext.Provider
 			value={{
 				contacts,
+				deselectContact,
 				getContact,
 				getContacts,
 				selectedContact,
 				setContacts,
+				setSelectedContact,
 				setSortOrder,
 				sortOrder,
 				sortByName,
