@@ -7,13 +7,13 @@ export const headers: IHeader[] = [
 		isSortable: true,
 	},
 	{
+		headerKey: "last_name",
+		label: "Last Name",
+	},
+	{
 		headerKey: "email",
 		label: "Email",
 		isSortable: true,
-	},
-	{
-		headerKey: "phone",
-		label: "Phone Number",
 	},
 	{
 		headerKey: "icons",
@@ -27,6 +27,7 @@ export const defaultStateValue: IContact[] = [
 		avatar: "",
 		email: "",
 		first_name: "",
+		last_name: "",
 		phone: "",
 	},
 ];

@@ -11,6 +11,7 @@ export const ContactProvider = ({ children }: { children: React.ReactNode }) => 
 	const [formValues, setFormValues] = useState({
 		id: NaN,
 		first_name: "",
+		last_name: "",
 		email: "",
 		phone: "",
 	});
@@ -39,6 +40,7 @@ export const ContactProvider = ({ children }: { children: React.ReactNode }) => 
 				avatar: "https://picsum.photos/100/100",
 				id: newContact.id,
 				first_name: newContact.first_name,
+				last_name: newContact.first_name,
 				email: newContact.email,
 			}),
 		});
