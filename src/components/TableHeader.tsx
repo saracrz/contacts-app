@@ -1,7 +1,7 @@
 import { SortIcon } from "../assets/icons";
 import { useContacts } from "../context/ContactContext";
-import { TableCellHeader, TableHeaderWithIcon, TableRowHeader } from "../styles";
 import { IHeader } from "../types";
+import { TableCellHeader, TableHeaderWithIcon, TableRowHeader } from "./styles";
 
 export const TableHeader = ({ isSortable, label, headerKey }: IHeader) => {
 	const { sortByName } = useContacts();

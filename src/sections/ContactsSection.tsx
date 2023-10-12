@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import { Contact, Table } from "../components";
 import { headers } from "../consts/index";
 import { useContacts } from "../context/ContactContext";
-import { ContactSectionWrapper } from "../styles";
+import { ContactSectionWrapper } from "./styles";
 
 export const ContactsSection = () => {
 	const { contacts, getContacts } = useContacts();
