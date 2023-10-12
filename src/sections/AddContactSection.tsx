@@ -18,12 +18,13 @@ export const AddContactSection = () => {
 		const newContact = {
 			id: NaN,
 			first_name: formValues.first_name,
+			last_name: formValues.last_name,
 			email: formValues.email,
 			phone: " - ",
 		};
 
 		void addContact(newContact);
-		setFormValues({ id: NaN, first_name: "", email: "", phone: "-" });
+		setFormValues({ id: NaN, first_name: "", last_name: "", email: "", phone: "-" });
 	};
 
 	return (

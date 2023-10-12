@@ -3,6 +3,7 @@ export interface IContact {
 	avatar?: string;
 	email: string;
 	first_name: string;
+	last_name: string;
 	phone: string;
 	[key: string]: string | undefined | React.ReactElement[] | number;
 }
