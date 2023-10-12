@@ -1,4 +1,5 @@
-import { iconsRows } from "../consts/index";
+import { DeleteIcon, EditIcon, Info } from "../assets/icons";
+import { useContacts } from "../context/ContactContext";
 import {
 	AvatarAndNameWrapper,
 	Content,
@@ -13,6 +14,12 @@ import { Avatar } from "./Avatar";
 import { TableHeader } from "./TableHeader";
 
 export const Table = ({ headers, rows }: ITable) => {
+	const { getContact, selectedContact } = useContacts();
+
+	const handleRowClick = (userId: number) => {
+		void getContact(userId, selectedContact);
+	};
+
 	return (
 		<Content>
 			<TableWrapper>
@@ -39,7 +46,13 @@ export const Table = ({ headers, rows }: ITable) => {
 									) : (
 										row[header.headerKey]
 									)}
-									{header.headerKey === "icons" ? <>{iconsRows}</> : null}
+									{header.headerKey === "icons" ? (
+										<>
+											<DeleteIcon key="delete-icon" />
+											<EditIcon key="edit-icon" />
+											<Info key="more-icon" onClick={() => handleRowClick(row.id)} />
+										</>
+									) : null}
 								</TableCellBody>
 							))}
 						</TableRow>

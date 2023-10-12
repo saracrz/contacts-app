@@ -1,22 +1,44 @@
 import styled, { createGlobalStyle } from "styled-components";
 
 export const AppRoot = createGlobalStyle`
-        * {
-            font-family: Verdana, sans-serif;
-        }
+	* {
+	font-family: Verdana, sans-serif;
+	}
+		
+	body {
+		background-color: #f3f3f3;
+	}
     
 `;
 
 export const Content = styled.div`
+	background-color: white;
+	border-radius: 10px;
 	display: flex;
 	flex-direction: column;
 	gap: 10px;
 	padding: 1rem;
+	width: 100%;
+
+	@media (max-width: 768px) {
+		margin-bottom: 10px;
+	}
 `;
 
 export const TableWrapper = styled.table`
+	background-color: white;
 	border-collapse: collapse;
-	width: 100%;
+`;
+
+export const NameWrapper = styled.div`
+	align-items: center;
+	display: flex;
+	justify-content: center;
+
+	p:first-child {
+		align-items: center;
+		margin-right: 6px;
+	}
 `;
 
 export const HeaderWrapper = styled.thead``;
@@ -32,7 +54,6 @@ export const TableHeaderWithIcon = styled.div`
 `;
 
 export const TableRowHeader = styled.tr`
-	background-color: #d7d7d740;
 	display: table-cell;
 `;
 
@@ -41,9 +62,9 @@ export const TableRow = styled.tr`
 `;
 
 export const TableCellHeader = styled.th`
-	color: #626f81;
+	color: #4e5661;
 	font-size: 14px;
-	font-weight: 400;
+	font-weight: 600;
 	padding: 14px;
 	text-align: left;
 `;
@@ -78,4 +99,47 @@ export const Icon = styled.svg`
 	height: 22px;
 	padding: 6px;
 	width: 22px;
+`;
+
+export const ContactSectionWrapper = styled.section`
+	display: flex;
+
+	@media (max-width: 768px) {
+		display: flex;
+		flex-direction: column;
+		margin-top: 10px;
+	}
+`;
+
+export const ContactWrapper = styled.div`
+	padding: 30px;
+	text-align: center;
+
+	img {
+		width: 100px;
+	}
+
+	.email {
+		margin-top: 0px;
+	}
+`;
+
+export const CardContent = styled.div`
+	background-color: white;
+	border-radius: 10px;
+	height: fit-content;
+	margin-left: 10px;
+	padding: 15px;
+`;
+
+export const CardHeader = styled.div`
+	align-items: center;
+	display: flex;
+	justify-content: space-between;
+
+	h5 {
+		color: #4e5661;
+		font-size: 14px;
+		font-weight: 600;
+	}
 `;

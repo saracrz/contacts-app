@@ -1,3 +1,5 @@
+import { MouseEventHandler } from "react";
+
 import { Icon } from "../styles";
 
 export const DeleteIcon = ({ onClick }: { onClick?: () => void }) => (
@@ -61,4 +63,45 @@ export const SortIcon = ({ onClick }: { onClick?: () => void }) => (
 		<path d="M3 9l4 -4l4 4m-4 -4v14"></path>
 		<path d="M21 15l-4 4l-4 -4m4 4v-14"></path>
 	</svg>
+);
+
+export const Info = ({ onClick }: { onClick: MouseEventHandler<SVGSVGElement> }) => (
+	<Icon
+		xmlns="http://www.w3.org/2000/svg"
+		className="icon icon-tabler icon-tabler-info-circle"
+		width="24"
+		height="24"
+		viewBox="0 0 24 24"
+		strokeWidth="2"
+		stroke="currentColor"
+		fill="none"
+		strokeLinecap="round"
+		strokeLinejoin="round"
+		onClick={onClick}
+	>
+		<path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+		<path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0"></path>
+		<path d="M12 9h.01"></path>
+		<path d="M11 12h1v4h1"></path>
+	</Icon>
+);
+
+export const Close = ({ onClick }: { onClick: MouseEventHandler<SVGSVGElement> }) => (
+	<Icon
+		xmlns="http://www.w3.org/2000/svg"
+		className="icon icon-tabler icon-tabler-x"
+		width="24"
+		height="24"
+		viewBox="0 0 24 24"
+		strokeWidth="2"
+		stroke="currentColor"
+		fill="none"
+		strokeLinecap="round"
+		strokeLinejoin="round"
+		onClick={onClick}
+	>
+		<path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+		<path d="M18 6l-12 12"></path>
+		<path d="M6 6l12 12"></path>
+	</Icon>
 );
