@@ -1,31 +1,29 @@
 import styled, { createGlobalStyle } from "styled-components";
 
 export const AppRoot = createGlobalStyle`
-        * {
-            font-family: Verdana, sans-serif;
-        }
+	* {
+	font-family: Verdana, sans-serif;
+	}
 		
-		body {
-			background-color: #f3f3f3;
-			padding: 40px;
-		}
+	body {
+		background-color: #f3f3f3;
+	}
     
 `;
 
 export const Content = styled.div`
 	background-color: white;
 	border-radius: 10px;
-	width: 100%;
 	display: flex;
 	flex-direction: column;
 	gap: 10px;
 	padding: 1rem;
+	width: 100%;
 `;
 
 export const TableWrapper = styled.table`
 	background-color: white;
 	border-collapse: collapse;
-	width: 100%;
 `;
 
 export const NameWrapper = styled.div`
@@ -99,8 +97,14 @@ export const Icon = styled.svg`
 	width: 22px;
 `;
 
-export const ContactSectionWrapper = styled.div`
+export const ContactSectionWrapper = styled.section`
 	display: flex;
+
+	@media (max-width: 768px) {
+		display: flex;
+		flex-direction: column;
+		margin-top: 10px;
+	}
 `;
 
 export const ContactWrapper = styled.div`
@@ -125,9 +129,9 @@ export const CardContent = styled.div`
 `;
 
 export const CardHeader = styled.div`
+	align-items: center;
 	display: flex;
 	justify-content: space-between;
-	align-items: center;
 
 	h5 {
 		color: #4e5661;
