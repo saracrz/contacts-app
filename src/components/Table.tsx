@@ -1,4 +1,4 @@
-import { DeleteIcon, EditIcon, Info } from "../assets/icons";
+import { DeleteIcon, Info } from "../assets/icons";
 import { useContacts } from "../context/ContactContext";
 import { ITable } from "../types";
 import { Avatar } from "./Avatar";
@@ -14,10 +14,15 @@ import {
 import { TableHeader } from "./TableHeader";
 
 export const Table = ({ headers, rows }: ITable) => {
-	const { getContact, selectedContact } = useContacts();
+	const { getContact, selectedContact, setContacts, contacts } = useContacts();
 
-	const handleRowClick = (userId: number) => {
-		void getContact(userId, selectedContact);
+	const handleRowClick = (contactId: number) => {
+		void getContact(contactId, selectedContact);
+	};
+
+	const handleDeleteRow = (contactId: number) => {
+		const updatedData = contacts.filter((row) => row.id !== contactId);
+		setContacts(updatedData);
 	};
 
 	return (
@@ -48,8 +53,7 @@ export const Table = ({ headers, rows }: ITable) => {
 									)}
 									{header.headerKey === "icons" ? (
 										<>
-											<DeleteIcon key="delete-icon" />
-											<EditIcon key="edit-icon" />
+											<DeleteIcon key="delete-icon" onClick={() => handleDeleteRow(row.id)} />
 											<Info key="more-icon" onClick={() => handleRowClick(row.id)} />
 										</>
 									) : null}
