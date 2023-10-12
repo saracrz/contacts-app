@@ -8,6 +8,12 @@ export const ContactProvider = ({ children }: { children: React.ReactNode }) => 
 	const [contacts, setContacts] = useState<IContact[]>([]);
 	const [selectedContact, setSelectedContact] = useState<IContact | null>(null);
 	const [sortOrder, setSortOrder] = useState<TSortOrder>("asc");
+	const [formValues, setFormValues] = useState({
+		id: NaN,
+		first_name: "",
+		email: "",
+		phone: "",
+	});
 
 	const getContacts = async (): Promise<void> => {
 		const res: Response = await fetch("https://reqres.in/api/users");
@@ -21,6 +27,28 @@ export const ContactProvider = ({ children }: { children: React.ReactNode }) => 
 		const data = (await res.json()) as TContactData;
 
 		setSelectedContact(data.data);
+	};
+
+	const addContact = async (newContact: IContact): Promise<void> => {
+		const response = await fetch("https://reqres.in/api/users", {
+			method: "POST",
+			headers: {
+				"Content-Type": "application/json",
+			},
+			body: JSON.stringify({
+				avatar: "https://picsum.photos/100/100",
+				id: newContact.id,
+				first_name: newContact.first_name,
+				email: newContact.email,
+			}),
+		});
+
+		if (response.ok) {
+			const data = (await response.json()) as IContact;
+			setContacts([...contacts, data]);
+		} else {
+			console.error("Failed to add contact.");
+		}
 	};
 
 	const deselectContact = () => {
@@ -45,12 +73,15 @@ export const ContactProvider = ({ children }: { children: React.ReactNode }) => 
 	return (
 		<ContactContext.Provider
 			value={{
+				addContact,
 				contacts,
 				deselectContact,
+				formValues,
 				getContact,
 				getContacts,
 				selectedContact,
 				setContacts,
+				setFormValues,
 				setSelectedContact,
 				setSortOrder,
 				sortOrder,

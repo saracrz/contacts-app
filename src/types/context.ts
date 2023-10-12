@@ -3,6 +3,7 @@ import { IContact } from "./contact";
 export type TSortOrder = "asc" | "desc";
 
 export type ContactContextType = {
+	addContact: (contact: IContact) => Promise<void>;
 	contacts: IContact[];
 	deselectContact: () => void;
 	getContacts: () => Promise<void>;
