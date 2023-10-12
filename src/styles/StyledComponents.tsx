@@ -104,13 +104,8 @@ export const ContactSectionWrapper = styled.div`
 `;
 
 export const ContactWrapper = styled.div`
-	background-color: white;
-	border-radius: 10px;
-	height: fit-content;
-	margin-left: 10px;
 	padding: 30px;
 	text-align: center;
-	width: 25%;
 
 	img {
 		width: 100px;
@@ -118,5 +113,25 @@ export const ContactWrapper = styled.div`
 
 	.email {
 		margin-top: 0px;
+	}
+`;
+
+export const CardContent = styled.div`
+	background-color: white;
+	border-radius: 10px;
+	height: fit-content;
+	margin-left: 10px;
+	padding: 15px;
+`;
+
+export const CardHeader = styled.div`
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+
+	h5 {
+		color: #4e5661;
+		font-size: 14px;
+		font-weight: 600;
 	}
 `;
