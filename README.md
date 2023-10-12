@@ -3,10 +3,13 @@
 </h1>
 
 <p align="center">
-  Website to display a contacts list where you can manage them (Add a new one, edit and delete the existing ones)
+  Website to display a contacts list where you can: add a new one and delete the existing ones, order by name or email and display more contact info.
   <br />
   <br />
 </p>
+
+### External Tech Docs:
+The project is using [reqres.in](reqres.in), a free API, that is why when you add a new contact it won't be stored when you refresh the page.
 
 ### External Tech Docs:
 [Notion](https://www.notion.so/Contacts-App-c2bfceff077645558986bd587acdbc8b?pvs=4)
