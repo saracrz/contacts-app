@@ -2,7 +2,7 @@ import { createGlobalStyle } from "styled-components";
 
 export const AppRoot = createGlobalStyle`
 	* {
-	font-family: Verdana, sans-serif;
+	font-family: 'Poppins', sans-serif;
 	}
 		
 	body {

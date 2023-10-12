@@ -1,12 +1,11 @@
 import { createContext, useContext, useState } from "react";
 
-import { defaultStateValue } from "../consts/index";
 import { ContactContextType, IContact, TContactData, TContactsData, TSortOrder } from "../types";
 
 export const ContactContext = createContext<ContactContextType | null>(null);
 
 export const ContactProvider = ({ children }: { children: React.ReactNode }) => {
-	const [contacts, setContacts] = useState<IContact[]>(defaultStateValue);
+	const [contacts, setContacts] = useState<IContact[]>([]);
 	const [selectedContact, setSelectedContact] = useState<IContact | null>(null);
 	const [sortOrder, setSortOrder] = useState<TSortOrder>("asc");
 
