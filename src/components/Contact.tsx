@@ -1,7 +1,7 @@
 import { useContacts } from "../context/ContactContext";
-import { ContactWrapper, NameWrapper } from "../styles";
 import { Avatar } from "./Avatar";
 import { Card } from "./Card";
+import { ContactWrapper, NameWrapper } from "./styles";
 
 export const Contact = (): JSX.Element | null => {
 	const { selectedContact } = useContacts();

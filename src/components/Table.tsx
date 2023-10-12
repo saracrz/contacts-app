@@ -1,16 +1,16 @@
 import { DeleteIcon, EditIcon, Info } from "../assets/icons";
 import { useContacts } from "../context/ContactContext";
+import { ITable } from "../types";
+import { Avatar } from "./Avatar";
 import {
 	AvatarAndNameWrapper,
-	Content,
 	HeaderWrapper,
 	TableBody,
 	TableCellBody,
+	TableContent,
 	TableRow,
 	TableWrapper,
-} from "../styles";
-import { ITable } from "../types";
-import { Avatar } from "./Avatar";
+} from "./styles";
 import { TableHeader } from "./TableHeader";
 
 export const Table = ({ headers, rows }: ITable) => {
@@ -21,7 +21,7 @@ export const Table = ({ headers, rows }: ITable) => {
 	};
 
 	return (
-		<Content>
+		<TableContent>
 			<TableWrapper>
 				<HeaderWrapper>
 					{headers.map((header) => (
@@ -59,6 +59,6 @@ export const Table = ({ headers, rows }: ITable) => {
 					))}
 				</TableBody>
 			</TableWrapper>
-		</Content>
+		</TableContent>
 	);
 };

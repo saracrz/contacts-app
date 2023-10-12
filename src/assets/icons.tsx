@@ -1,6 +1,6 @@
 import { MouseEventHandler } from "react";
 
-import { Icon } from "../styles";
+import { Icon } from "../components/styles";
 
 export const DeleteIcon = ({ onClick }: { onClick?: () => void }) => (
 	<Icon
