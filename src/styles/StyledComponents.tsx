@@ -19,6 +19,10 @@ export const Content = styled.div`
 	gap: 10px;
 	padding: 1rem;
 	width: 100%;
+
+	@media (max-width: 768px) {
+		margin-bottom: 10px;
+	}
 `;
 
 export const TableWrapper = styled.table`
