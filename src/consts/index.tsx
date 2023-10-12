@@ -23,7 +23,7 @@ export const headers: IHeader[] = [
 
 export const defaultStateValue: IContact[] = [
 	{
-		id: "",
+		id: NaN,
 		avatar: "",
 		email: "",
 		first_name: "",
