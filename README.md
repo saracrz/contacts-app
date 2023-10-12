@@ -8,6 +8,9 @@
   <br />
 </p>
 
+### External Tech Docs:
+[Notion](https://www.notion.so/Contacts-App-c2bfceff077645558986bd587acdbc8b?pvs=4)
+
 ## Run your app
 
    1. `cd my-app`: Move to your project root directory
