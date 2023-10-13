@@ -34,6 +34,7 @@ The project is using [reqres.in](reqres.in), a free API, that is why when you ad
 ## 🌈 Tech Stack
 
 - [TypeScript](https://www.typescriptlang.org)
+- [React Context](https://react.dev/reference/react/useContext) to manage the global state
 - [ESLint](https://eslint.org) and [Prettier](https://prettier.io) already configured
 - [Jest](https://jestjs.io) with [React Testing Library](https://testing-library.com/docs/react-testing-library/intro) for the unit tests
 - [Cypress](https://www.cypress.io) with [Testing Library](https://testing-library.com/docs/cypress-testing-library) for the end-to-end tests
