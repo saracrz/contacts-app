@@ -3,7 +3,14 @@ import { FC } from "react";
 import { IInput } from "../types/input";
 import { StyledButton, StyledInput } from "./styles/input";
 
-export const Input: FC<IInput> = ({ name, email, onChange, onAddContact, disabledButton }) => {
+export const Input: FC<IInput> = ({
+	lastName,
+	name,
+	email,
+	onChange,
+	onAddContact,
+	disabledButton,
+}) => {
 	return (
 		<>
 			<StyledInput
@@ -11,6 +18,13 @@ export const Input: FC<IInput> = ({ name, email, onChange, onAddContact, disable
 				name={"first_name"}
 				placeholder="Name"
 				value={name}
+				onChange={onChange}
+			/>
+			<StyledInput
+				type="text"
+				name={"last_name"}
+				placeholder="Last Name"
+				value={lastName}
 				onChange={onChange}
 			/>
 			<StyledInput
