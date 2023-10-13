@@ -8,8 +8,8 @@
   <br />
 </p>
 
-### External Tech Docs:
-The project is using [reqres.in](reqres.in), a free API, that is why when you add a new contact it won't be stored when you refresh the page.
+### API:
+The project is using [reqres.in](reqres.in), a free, open source API, that is why when you add or delete a new contact it won't be stored when you refresh the page.
 
 ### External Tech Docs:
 [Notion](https://www.notion.so/Contacts-App-c2bfceff077645558986bd587acdbc8b?pvs=4)
