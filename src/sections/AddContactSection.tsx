@@ -35,6 +35,7 @@ export const AddContactSection = () => {
 			<Input
 				disabledButton={isButtonDisabled}
 				name={formValues.first_name}
+				lastName={formValues.last_name}
 				email={formValues.email}
 				onChange={handleInputChange}
 				onAddContact={handleAddContact}
