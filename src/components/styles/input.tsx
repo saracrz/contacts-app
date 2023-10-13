@@ -1,11 +1,12 @@
 import styled from "styled-components";
 
 export const StyledButton = styled.button`
-	color: #4c46c3;
-	cursor: pointer;
 	background-color: #dde2ff;
 	border-radius: 15px;
 	border: 1px solid #dde2ff;
+	color: #4c46c3;
+	cursor: pointer;
+	height: 30px;
 	padding: 0px 10px;
 	&:disabled {
 		background-color: #e1dddd;
