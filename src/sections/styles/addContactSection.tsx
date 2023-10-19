@@ -5,7 +5,7 @@ export const InputWrapper = styled.div`
 	justify-content: end;
 	margin: 60px 40px 0px 0px;
 
-	@media (max-width: 867px) {
+	@media (max-width: 995px) {
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
