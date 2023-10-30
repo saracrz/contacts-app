@@ -1,12 +1,13 @@
 import { useState } from "react";
 
-import { Input } from "../components";
+import { Form, TextButton } from "../components";
 import { useContacts } from "../context/ContactContext";
 import { InputAndTitle, InputWrapper, SectionTitle } from "./styles";
 
 export const AddContactSection = () => {
 	const { addContact, formValues, setFormValues } = useContacts();
 	const [isButtonDisabled, setIsButtonDisabled] = useState(true);
+	const [showForm, setShowForm] = useState(false);
 
 	const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
 		const { name, value } = e.target;
@@ -24,22 +25,32 @@ export const AddContactSection = () => {
 		};
 
 		void addContact(newContact);
+		setShowForm(false);
 		setFormValues({ id: NaN, first_name: "", last_name: "", email: "", phone: "-" });
 	};
 
+	const handleOnClick = () => {
+		setShowForm(!showForm);
+	};
+
 	return (
-		<InputWrapper>
-			<InputAndTitle>
-				<SectionTitle>Contacts</SectionTitle>
-			</InputAndTitle>
-			<Input
-				disabledButton={isButtonDisabled}
-				name={formValues.first_name}
-				lastName={formValues.last_name}
-				email={formValues.email}
-				onChange={handleInputChange}
-				onAddContact={handleAddContact}
-			/>
-		</InputWrapper>
+		<>
+			<InputWrapper>
+				<InputAndTitle>
+					<SectionTitle>Contacts</SectionTitle>
+				</InputAndTitle>
+				{showForm ? (
+					<Form
+						disabledButton={isButtonDisabled}
+						name={formValues.first_name}
+						lastName={formValues.last_name}
+						email={formValues.email}
+						onChange={handleInputChange}
+						onSubmit={handleAddContact}
+					/>
+				) : null}
+				{!showForm ? <TextButton label={"+ New Contact"} onClickButton={handleOnClick} /> : null}
+			</InputWrapper>
+		</>
 	);
 };

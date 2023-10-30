@@ -1,42 +1,16 @@
 import { FC } from "react";
 
-import { IInput } from "../types/input";
-import { StyledButton, StyledInput } from "./styles/input";
+import { IInput } from "../types/form";
+import { StyledInput } from "./styles/form";
 
-export const Input: FC<IInput> = ({
-	lastName,
-	name,
-	email,
-	onChange,
-	onAddContact,
-	disabledButton,
-}) => {
+export const Input: FC<IInput> = ({ name, onChange, placeholder, type, value }) => {
 	return (
-		<>
-			<StyledInput
-				type="text"
-				name={"first_name"}
-				placeholder="Name"
-				value={name}
-				onChange={onChange}
-			/>
-			<StyledInput
-				type="text"
-				name={"last_name"}
-				placeholder="Last Name"
-				value={lastName}
-				onChange={onChange}
-			/>
-			<StyledInput
-				type="email"
-				name={"email"}
-				placeholder="Email"
-				value={email}
-				onChange={onChange}
-			/>
-			<StyledButton onClick={onAddContact} disabled={disabledButton}>
-				Add Contact
-			</StyledButton>
-		</>
+		<StyledInput
+			type={type}
+			name={name}
+			placeholder={placeholder}
+			value={value}
+			onChange={onChange}
+		/>
 	);
 };
