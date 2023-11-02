@@ -1,20 +1,12 @@
 import { createContext, useContext, useState } from "react";
 
-import { ContactContextType, IContact, TContactData, TContactsData, TSortOrder } from "../types";
+import { ContactContextType, IContact, TContactData, TContactsData } from "../types";
 
 export const ContactContext = createContext<ContactContextType | null>(null);
 
 export const ContactProvider = ({ children }: { children: React.ReactNode }) => {
 	const [contacts, setContacts] = useState<IContact[]>([]);
 	const [selectedContact, setSelectedContact] = useState<IContact | null>(null);
-	const [sortOrder, setSortOrder] = useState<TSortOrder>("asc");
-	const [formValues, setFormValues] = useState({
-		id: NaN,
-		first_name: "",
-		last_name: "",
-		email: "",
-		phone: "",
-	});
 
 	const getContacts = async (): Promise<void> => {
 		const res: Response = await fetch("https://reqres.in/api/users");
@@ -57,37 +49,17 @@ export const ContactProvider = ({ children }: { children: React.ReactNode }) => 
 		setSelectedContact(null);
 	};
 
-	const sortByName = () => {
-		const sort = [...contacts].sort((a: IContact, b: IContact) => {
-			if (sortOrder === "asc") {
-				return a.first_name.localeCompare(b.first_name);
-			}
-
-			return b.first_name.localeCompare(a.first_name);
-		});
-
-		const toggleSortOrder = sortOrder === "asc" ? "desc" : "asc";
-		setSortOrder(toggleSortOrder);
-
-		setContacts(sort);
-	};
-
 	return (
 		<ContactContext.Provider
 			value={{
 				addContact,
 				contacts,
 				deselectContact,
-				formValues,
 				getContact,
 				getContacts,
 				selectedContact,
 				setContacts,
-				setFormValues,
 				setSelectedContact,
-				setSortOrder,
-				sortOrder,
-				sortByName,
 			}}
 		>
 			{children}
