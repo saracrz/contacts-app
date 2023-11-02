@@ -1,11 +1,13 @@
 import { useState } from "react";
 
 import { Form, TextButton } from "../components";
-import { useContacts } from "../context/ContactContext";
+import { useContacts, useForm } from "../context";
 import { InputAndTitle, InputWrapper, SectionTitle } from "./styles";
 
 export const AddContactSection = () => {
-	const { addContact, formValues, setFormValues } = useContacts();
+	const { formValues, setFormValues } = useForm();
+	const { addContact } = useContacts();
+
 	const [isButtonDisabled, setIsButtonDisabled] = useState(true);
 	const [showForm, setShowForm] = useState(false);
 
@@ -34,23 +36,21 @@ export const AddContactSection = () => {
 	};
 
 	return (
-		<>
-			<InputWrapper>
-				<InputAndTitle>
-					<SectionTitle>Contacts</SectionTitle>
-				</InputAndTitle>
-				{showForm ? (
-					<Form
-						disabledButton={isButtonDisabled}
-						name={formValues.first_name}
-						lastName={formValues.last_name}
-						email={formValues.email}
-						onChange={handleInputChange}
-						onSubmit={handleAddContact}
-					/>
-				) : null}
-				{!showForm ? <TextButton label={"+ New Contact"} onClickButton={handleOnClick} /> : null}
-			</InputWrapper>
-		</>
+		<InputWrapper>
+			<InputAndTitle>
+				<SectionTitle>Contacts</SectionTitle>
+			</InputAndTitle>
+			{showForm ? (
+				<Form
+					disabledButton={isButtonDisabled}
+					name={formValues.first_name}
+					lastName={formValues.last_name}
+					email={formValues.email}
+					onChange={handleInputChange}
+					onSubmit={handleAddContact}
+				/>
+			) : null}
+			{!showForm ? <TextButton label={"+ New Contact"} onClickButton={handleOnClick} /> : null}
+		</InputWrapper>
 	);
 };
