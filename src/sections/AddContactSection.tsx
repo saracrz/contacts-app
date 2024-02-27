@@ -29,6 +29,7 @@ export const AddContactSection = () => {
 		void addContact(newContact);
 		setShowForm(false);
 		setFormValues({ id: NaN, first_name: "", last_name: "", email: "", phone: "-" });
+		setIsButtonDisabled(true);
 	};
 
 	const handleOnClick = () => {
